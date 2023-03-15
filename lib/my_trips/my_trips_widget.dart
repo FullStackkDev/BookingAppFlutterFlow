@@ -628,7 +628,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                                         4.0),
                                                             child: Text(
                                                               dateTimeFormat(
-                                                                  'd/M h:mm a',
+                                                                  'yMd',
                                                                   listViewTripsRecord
                                                                       .checkInDate!),
                                                               style: FlutterFlowTheme
@@ -906,7 +906,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                                     4.0),
                                                         child: Text(
                                                           dateTimeFormat(
-                                                              'M/d h:mm a',
+                                                              'yMd',
                                                               citiesNoSerachItem
                                                                   .checkInDate!),
                                                           style: FlutterFlowTheme

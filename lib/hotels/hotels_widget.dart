@@ -264,7 +264,7 @@ class _HotelsWidgetState extends State<HotelsWidget>
                                                       )
                                                           .toString()
                                                           .maybeHandleOverflow(
-                                                              maxChars: 5),
+                                                              maxChars: 6),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
