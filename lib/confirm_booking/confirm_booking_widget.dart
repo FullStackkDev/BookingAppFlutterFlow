@@ -271,8 +271,6 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                       userRef: currentUserReference,
                       hotelName: widget.name,
                       image: widget.image,
-                      cityName: widget.cityName,
-                      countryName: widget.countryName,
                     ),
                     'checkInDate': FieldValue.serverTimestamp(),
                   };

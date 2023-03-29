@@ -73,6 +73,284 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
         return Scaffold(
           key: scaffoldKey,
           backgroundColor: Color(0xFFF1F4F8),
+          drawer: Drawer(
+            elevation: 16.0,
+            child: Container(
+              width: 100.0,
+              height: 100.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).primaryColor,
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: Container(
+                        width: 120.0,
+                        height: 120.0,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.network(
+                          'https://picsum.photos/seed/246/600',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                      child: InkWell(
+                        onTap: () async {
+                          context.pushNamed(
+                            'LogOut',
+                            queryParams: {
+                              'userRef': serializeParam(
+                                currentUserReference,
+                                ParamType.DocumentReference,
+                              ),
+                              'email': serializeParam(
+                                currentUserEmail,
+                                ParamType.String,
+                              ),
+                            }.withoutNulls,
+                          );
+
+                          Navigator.pop(context);
+                        },
+                        child: Text(
+                          'My Profile',
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Lato',
+                                    color: FlutterFlowTheme.of(context)
+                                        .maximumBlueGreen,
+                                  ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(10.0, 40.0, 10.0, 0.0),
+                      child: InkWell(
+                        onTap: () async {
+                          context.pushNamed('MyTrips');
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 1.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: ListTile(
+                            title: Text(
+                              'My Trips',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .title3
+                                  .override(
+                                    fontFamily: 'Lato',
+                                    color:
+                                        FlutterFlowTheme.of(context).black600,
+                                  ),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF303030),
+                              size: 20.0,
+                            ),
+                            tileColor: FlutterFlowTheme.of(context).tertiary400,
+                            dense: true,
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 10.0, 0.0),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: InkWell(
+                        onTap: () async {
+                          context.pushNamed('Countries');
+
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 1.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: ListTile(
+                            title: Text(
+                              'Book New Trip',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .title3
+                                  .override(
+                                    fontFamily: 'Lato',
+                                    color:
+                                        FlutterFlowTheme.of(context).black600,
+                                  ),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF303030),
+                              size: 20.0,
+                            ),
+                            tileColor: FlutterFlowTheme.of(context).tertiary400,
+                            dense: true,
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 10.0, 0.0),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: InkWell(
+                        onTap: () async {
+                          context.pushNamed(
+                            'LogOut',
+                            queryParams: {
+                              'userRef': serializeParam(
+                                currentUserReference,
+                                ParamType.DocumentReference,
+                              ),
+                              'email': serializeParam(
+                                currentUserEmail,
+                                ParamType.String,
+                              ),
+                            }.withoutNulls,
+                          );
+
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 1.0,
+                          height: 50.0,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                          child: ListTile(
+                            title: Text(
+                              'My Profile',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .title3
+                                  .override(
+                                    fontFamily: 'Lato',
+                                    color:
+                                        FlutterFlowTheme.of(context).black600,
+                                  ),
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Color(0xFF303030),
+                              size: 20.0,
+                            ),
+                            tileColor: FlutterFlowTheme.of(context).tertiary400,
+                            dense: true,
+                            contentPadding: EdgeInsetsDirectional.fromSTEB(
+                                10.0, 0.0, 10.0, 0.0),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(0.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 1.0,
+                        height: 50.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                        child: ListTile(
+                          title: Text(
+                            'Reviews',
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context).title3.override(
+                                  fontFamily: 'Lato',
+                                  color: FlutterFlowTheme.of(context).black600,
+                                ),
+                          ),
+                          trailing: Icon(
+                            Icons.arrow_forward_ios,
+                            color: Color(0xFF303030),
+                            size: 20.0,
+                          ),
+                          tileColor: FlutterFlowTheme.of(context).tertiary400,
+                          dense: true,
+                          contentPadding: EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 10.0, 0.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(0.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          GoRouter.of(context).prepareAuthEvent();
+                          await signOut();
+                          GoRouter.of(context).clearRedirectLocation();
+
+                          context.goNamedAuth('LoginPage', mounted);
+                        },
+                        text: 'Log out',
+                        options: FFButtonOptions(
+                          width: 200.0,
+                          height: 50.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: Color(0xFFB5010D),
+                          textStyle:
+                              FlutterFlowTheme.of(context).subtitle2.override(
+                                    fontFamily: 'Lato',
+                                    color: Colors.white,
+                                  ),
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(15.0),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
           appBar: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).primaryColor,
             automaticallyImplyLeading: false,
@@ -91,24 +369,12 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                 borderWidth: 1.0,
                 buttonSize: 60.0,
                 icon: Icon(
-                  Icons.person_sharp,
+                  Icons.menu,
                   color: FlutterFlowTheme.of(context).primaryText,
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  context.pushNamed(
-                    'LogOut',
-                    queryParams: {
-                      'userRef': serializeParam(
-                        currentUserReference,
-                        ParamType.DocumentReference,
-                      ),
-                      'email': serializeParam(
-                        currentUserEmail,
-                        ParamType.String,
-                      ),
-                    }.withoutNulls,
-                  );
+                  scaffoldKey.currentState!.openDrawer();
                 },
               ),
             ],
@@ -260,7 +526,6 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                 });
                                               },
                                             ),
-                                            autofocus: true,
                                             obscureText: false,
                                             decoration: InputDecoration(
                                               hintText: 'Search cities...',
@@ -386,6 +651,11 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                         }
                         List<TripsRecord> listViewTripsRecordList =
                             snapshot.data!;
+                        if (listViewTripsRecordList.isEmpty) {
+                          return Image.network(
+                            'https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png',
+                          );
+                        }
                         return ListView.builder(
                           padding: EdgeInsets.zero,
                           scrollDirection: Axis.vertical,
@@ -677,6 +947,11 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                       builder: (context) {
                         final citiesNoSerach =
                             _model.simpleSearchResults.toList();
+                        if (citiesNoSerach.isEmpty) {
+                          return Image.network(
+                            'https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png',
+                          );
+                        }
                         return ListView.builder(
                           padding: EdgeInsets.zero,
                           shrinkWrap: true,
@@ -755,11 +1030,12 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Expanded(
-                                                child: StreamBuilder<
-                                                    List<CitiesRecord>>(
-                                                  stream: queryCitiesRecord(
-                                                    singleRecord: true,
-                                                  ),
+                                                child:
+                                                    StreamBuilder<CitiesRecord>(
+                                                  stream:
+                                                      CitiesRecord.getDocument(
+                                                          citiesNoSerachItem
+                                                              .cityRef!),
                                                   builder: (context, snapshot) {
                                                     // Customize what your widget looks like when it's loading.
                                                     if (!snapshot.hasData) {
@@ -777,22 +1053,10 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                         ),
                                                       );
                                                     }
-                                                    List<CitiesRecord>
-                                                        textCitiesRecordList =
-                                                        snapshot.data!;
-                                                    // Return an empty Container when the item does not exist.
-                                                    if (snapshot
-                                                        .data!.isEmpty) {
-                                                      return Container();
-                                                    }
                                                     final textCitiesRecord =
-                                                        textCitiesRecordList
-                                                                .isNotEmpty
-                                                            ? textCitiesRecordList
-                                                                .first
-                                                            : null;
+                                                        snapshot.data!;
                                                     return Text(
-                                                      textCitiesRecord!.name!,
+                                                      textCitiesRecord.name!,
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -822,11 +1086,11 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              StreamBuilder<
-                                                  List<CountriesRecord>>(
-                                                stream: queryCountriesRecord(
-                                                  singleRecord: true,
-                                                ),
+                                              StreamBuilder<CountriesRecord>(
+                                                stream:
+                                                    CountriesRecord.getDocument(
+                                                        citiesNoSerachItem
+                                                            .countryRef!),
                                                 builder: (context, snapshot) {
                                                   // Customize what your widget looks like when it's loading.
                                                   if (!snapshot.hasData) {
@@ -844,21 +1108,10 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                       ),
                                                     );
                                                   }
-                                                  List<CountriesRecord>
-                                                      textCountriesRecordList =
-                                                      snapshot.data!;
-                                                  // Return an empty Container when the item does not exist.
-                                                  if (snapshot.data!.isEmpty) {
-                                                    return Container();
-                                                  }
                                                   final textCountriesRecord =
-                                                      textCountriesRecordList
-                                                              .isNotEmpty
-                                                          ? textCountriesRecordList
-                                                              .first
-                                                          : null;
+                                                      snapshot.data!;
                                                   return Text(
-                                                    textCountriesRecord!.name!,
+                                                    textCountriesRecord.name!,
                                                     textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)

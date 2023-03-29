@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -124,6 +126,11 @@ class _HotelsWidgetState extends State<HotelsWidget>
                             listViewGetHotelsResponse.jsonBody,
                             r'''$.data.propertySearch.properties''',
                           ).toList().take(5).toList();
+                          if (items.isEmpty) {
+                            return Image.network(
+                              'https://i.pinimg.com/originals/ae/8a/c2/ae8ac2fa217d23aadcc913989fcc34a2.png',
+                            );
+                          }
                           return ListView.builder(
                             padding: EdgeInsets.zero,
                             primary: false,
@@ -292,6 +299,8 @@ class _HotelsWidgetState extends State<HotelsWidget>
                                                   16.0, 0.0, 16.0, 16.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
                                                 'Ratings:  ',
@@ -307,6 +316,65 @@ class _HotelsWidgetState extends State<HotelsWidget>
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText2,
+                                              ),
+                                              FFButtonWidget(
+                                                onPressed: () async {
+                                                  context.pushNamed(
+                                                    'HotelMaps',
+                                                    queryParams: {
+                                                      'latLong': serializeParam(
+                                                        functions.getLatLong(
+                                                            getJsonField(
+                                                              itemsItem,
+                                                              r'''$.mapMarker.latLong.latitude''',
+                                                            ),
+                                                            getJsonField(
+                                                              itemsItem,
+                                                              r'''$.mapMarker.latLong.longitude''',
+                                                            )),
+                                                        ParamType.LatLng,
+                                                      ),
+                                                      'hotelName':
+                                                          serializeParam(
+                                                        getJsonField(
+                                                          itemsItem,
+                                                          r'''$.name''',
+                                                        ).toString(),
+                                                        ParamType.String,
+                                                      ),
+                                                    }.withoutNulls,
+                                                  );
+                                                },
+                                                text: 'View on Map',
+                                                options: FFButtonOptions(
+                                                  width: 120.0,
+                                                  height: 25.0,
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 0.0),
+                                                  iconPadding:
+                                                      EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryColor,
+                                                  textStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .subtitle2
+                                                          .override(
+                                                            fontFamily: 'Lato',
+                                                            color: Colors.white,
+                                                          ),
+                                                  borderSide: BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
                                               ),
                                             ],
                                           ),

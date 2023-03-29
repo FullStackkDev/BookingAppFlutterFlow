@@ -71,20 +71,6 @@ class _$TripsRecordSerializer implements StructuredSerializer<TripsRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.cityName;
-    if (value != null) {
-      result
-        ..add('cityName')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.countryName;
-    if (value != null) {
-      result
-        ..add('countryName')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -141,14 +127,6 @@ class _$TripsRecordSerializer implements StructuredSerializer<TripsRecord> {
           result.image = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'cityName':
-          result.cityName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'countryName':
-          result.countryName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -178,10 +156,6 @@ class _$TripsRecord extends TripsRecord {
   @override
   final String? image;
   @override
-  final String? cityName;
-  @override
-  final String? countryName;
-  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$TripsRecord([void Function(TripsRecordBuilder)? updates]) =>
@@ -195,8 +169,6 @@ class _$TripsRecord extends TripsRecord {
       this.checkOutDate,
       this.hotelName,
       this.image,
-      this.cityName,
-      this.countryName,
       this.ffRef})
       : super._();
 
@@ -218,8 +190,6 @@ class _$TripsRecord extends TripsRecord {
         checkOutDate == other.checkOutDate &&
         hotelName == other.hotelName &&
         image == other.image &&
-        cityName == other.cityName &&
-        countryName == other.countryName &&
         ffRef == other.ffRef;
   }
 
@@ -230,18 +200,12 @@ class _$TripsRecord extends TripsRecord {
             $jc(
                 $jc(
                     $jc(
-                        $jc(
-                            $jc(
-                                $jc(
-                                    $jc($jc(0, countryRef.hashCode),
-                                        cityRef.hashCode),
-                                    userRef.hashCode),
-                                checkInDate.hashCode),
-                            checkOutDate.hashCode),
-                        hotelName.hashCode),
-                    image.hashCode),
-                cityName.hashCode),
-            countryName.hashCode),
+                        $jc($jc($jc(0, countryRef.hashCode), cityRef.hashCode),
+                            userRef.hashCode),
+                        checkInDate.hashCode),
+                    checkOutDate.hashCode),
+                hotelName.hashCode),
+            image.hashCode),
         ffRef.hashCode));
   }
 
@@ -255,8 +219,6 @@ class _$TripsRecord extends TripsRecord {
           ..add('checkOutDate', checkOutDate)
           ..add('hotelName', hotelName)
           ..add('image', image)
-          ..add('cityName', cityName)
-          ..add('countryName', countryName)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -295,14 +257,6 @@ class TripsRecordBuilder implements Builder<TripsRecord, TripsRecordBuilder> {
   String? get image => _$this._image;
   set image(String? image) => _$this._image = image;
 
-  String? _cityName;
-  String? get cityName => _$this._cityName;
-  set cityName(String? cityName) => _$this._cityName = cityName;
-
-  String? _countryName;
-  String? get countryName => _$this._countryName;
-  set countryName(String? countryName) => _$this._countryName = countryName;
-
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -321,8 +275,6 @@ class TripsRecordBuilder implements Builder<TripsRecord, TripsRecordBuilder> {
       _checkOutDate = $v.checkOutDate;
       _hotelName = $v.hotelName;
       _image = $v.image;
-      _cityName = $v.cityName;
-      _countryName = $v.countryName;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -353,8 +305,6 @@ class TripsRecordBuilder implements Builder<TripsRecord, TripsRecordBuilder> {
             checkOutDate: checkOutDate,
             hotelName: hotelName,
             image: image,
-            cityName: cityName,
-            countryName: countryName,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

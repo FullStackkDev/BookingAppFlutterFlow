@@ -23,19 +23,13 @@ abstract class TripsRecord implements Built<TripsRecord, TripsRecordBuilder> {
 
   String? get image;
 
-  String? get cityName;
-
-  String? get countryName;
-
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
 
   static void _initializeBuilder(TripsRecordBuilder builder) => builder
     ..hotelName = ''
-    ..image = ''
-    ..cityName = ''
-    ..countryName = '';
+    ..image = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Trips');
@@ -66,8 +60,6 @@ Map<String, dynamic> createTripsRecordData({
   DateTime? checkOutDate,
   String? hotelName,
   String? image,
-  String? cityName,
-  String? countryName,
 }) {
   final firestoreData = serializers.toFirestore(
     TripsRecord.serializer,
@@ -79,9 +71,7 @@ Map<String, dynamic> createTripsRecordData({
         ..checkInDate = checkInDate
         ..checkOutDate = checkOutDate
         ..hotelName = hotelName
-        ..image = image
-        ..cityName = cityName
-        ..countryName = countryName,
+        ..image = image,
     ),
   );
 

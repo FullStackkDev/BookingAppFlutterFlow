@@ -135,6 +135,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 'userRef', ParamType.DocumentReference, false, ['users']),
             email: params.getParam('email', ParamType.String),
           ),
+        ),
+        FFRoute(
+          name: 'HotelMaps',
+          path: '/hotelMaps',
+          builder: (context, params) => HotelMapsWidget(
+            latLong: params.getParam('latLong', ParamType.LatLng),
+            hotelName: params.getParam('hotelName', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
@@ -203,6 +211,7 @@ extension GoRouterExtensions on GoRouter {
           : appState.updateNotifyOnAuthChange(false);
   bool shouldRedirect(bool ignoreRedirect) =>
       !ignoreRedirect && appState.hasRedirect();
+  void clearRedirectLocation() => appState.clearRedirectLocation();
   void setRedirectLocationIfUnset(String location) =>
       (routerDelegate.refreshListenable as AppStateNotifier)
           .updateNotifyOnAuthChange(false);

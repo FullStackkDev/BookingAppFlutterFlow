@@ -64,7 +64,7 @@ class _CitiesWidgetState extends State<CitiesWidget> {
             size: 24.0,
           ),
           onPressed: () async {
-            context.pop();
+            context.safePop();
           },
         ),
         title: Text(
