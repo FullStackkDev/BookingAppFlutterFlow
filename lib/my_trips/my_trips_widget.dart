@@ -63,7 +63,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
               width: 50.0,
               height: 50.0,
               child: SpinKitFadingCircle(
-                color: FlutterFlowTheme.of(context).primaryColor,
+                color: FlutterFlowTheme.of(context).primary,
                 size: 50.0,
               ),
             ),
@@ -79,7 +79,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
               width: 100.0,
               height: 100.0,
               decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).primaryColor,
+                color: FlutterFlowTheme.of(context).primary,
               ),
               child: SingleChildScrollView(
                 child: Column(
@@ -87,7 +87,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                   children: [
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                       child: Container(
                         width: 120.0,
                         height: 120.0,
@@ -125,7 +125,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                         child: Text(
                           'My Profile',
                           style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
+                              FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Lato',
                                     color: FlutterFlowTheme.of(context)
                                         .maximumBlueGreen,
@@ -153,7 +153,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                               'My Trips',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
-                                  .title3
+                                  .headlineSmall
                                   .override(
                                     fontFamily: 'Lato',
                                     color:
@@ -198,7 +198,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                               'Book New Trip',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
-                                  .title3
+                                  .headlineSmall
                                   .override(
                                     fontFamily: 'Lato',
                                     color:
@@ -255,7 +255,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                               'My Profile',
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
-                                  .title3
+                                  .headlineSmall
                                   .override(
                                     fontFamily: 'Lato',
                                     color:
@@ -293,7 +293,9 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                           title: Text(
                             'Reviews',
                             textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context).title3.override(
+                            style: FlutterFlowTheme.of(context)
+                                .headlineSmall
+                                .override(
                                   fontFamily: 'Lato',
                                   color: FlutterFlowTheme.of(context).black600,
                                 ),
@@ -334,10 +336,11 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                               0.0, 0.0, 0.0, 0.0),
                           color: Color(0xFFB5010D),
                           textStyle:
-                              FlutterFlowTheme.of(context).subtitle2.override(
+                              FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Lato',
                                     color: Colors.white,
                                   ),
+                          elevation: 2.0,
                           borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
@@ -352,11 +355,11 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
             ),
           ),
           appBar: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+            backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
             title: Text(
               'My Trips',
-              style: FlutterFlowTheme.of(context).subtitle1.override(
+              style: FlutterFlowTheme.of(context).titleMedium.override(
                     fontFamily: 'Lato',
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
@@ -425,7 +428,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                             child: SpinKitFadingCircle(
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryColor,
+                                                      .primary,
                                               size: 50.0,
                                             ),
                                           ),
@@ -464,7 +467,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                             onSelected: onSelected,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyText1,
+                                                    .bodyMedium,
                                             textHighlightStyle: TextStyle(),
                                             elevation: 4.0,
                                             optionBackgroundColor:
@@ -531,7 +534,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                               hintText: 'Search cities...',
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyText2,
+                                                      .bodySmall,
                                               enabledBorder:
                                                   UnderlineInputBorder(
                                                 borderSide: BorderSide(
@@ -585,7 +588,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                               ),
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyText1,
+                                                .bodyMedium,
                                             validator: _model
                                                 .textControllerValidator
                                                 .asValidator(context),
@@ -642,8 +645,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                               width: 50.0,
                               height: 50.0,
                               child: SpinKitFadingCircle(
-                                color:
-                                    FlutterFlowTheme.of(context).primaryColor,
+                                color: FlutterFlowTheme.of(context).primary,
                                 size: 50.0,
                               ),
                             ),
@@ -678,7 +680,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                         height: 50.0,
                                         child: SpinKitFadingCircle(
                                           color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
+                                              .primary,
                                           size: 50.0,
                                         ),
                                       ),
@@ -736,7 +738,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                           .hotelName!,
                                                       style: FlutterFlowTheme
                                                               .of(context)
-                                                          .title1
+                                                          .displaySmall
                                                           .override(
                                                             fontFamily:
                                                                 'Lexend Deca',
@@ -776,7 +778,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                                   SpinKitFadingCircle(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryColor,
+                                                                    .primary,
                                                                 size: 50.0,
                                                               ),
                                                             ),
@@ -789,13 +791,13 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                               .name!,
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyText2
+                                                              .bodySmall
                                                               .override(
                                                                 fontFamily:
                                                                     'Lexend Deca',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryColor,
+                                                                    .primary,
                                                                 fontSize: 14.0,
                                                                 fontWeight:
                                                                     FontWeight
@@ -833,7 +835,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                                 SpinKitFadingCircle(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .primaryColor,
+                                                                  .primary,
                                                               size: 50.0,
                                                             ),
                                                           ),
@@ -849,13 +851,13 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyText1
+                                                                .bodyMedium
                                                                 .override(
                                                                   fontFamily:
                                                                       'Lato',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .primaryColor,
+                                                                      .primary,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
@@ -903,7 +905,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                                       .checkInDate!),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
-                                                                  .title3
+                                                                  .headlineSmall
                                                                   .override(
                                                                     fontFamily:
                                                                         'Lexend Deca',
@@ -1008,7 +1010,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                   citiesNoSerachItem.hotelName!,
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .title1
+                                                      .displaySmall
                                                       .override(
                                                         fontFamily:
                                                             'Lexend Deca',
@@ -1047,7 +1049,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                               SpinKitFadingCircle(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
-                                                                .primaryColor,
+                                                                .primary,
                                                             size: 50.0,
                                                           ),
                                                         ),
@@ -1060,13 +1062,13 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyText2
+                                                              .bodySmall
                                                               .override(
                                                                 fontFamily:
                                                                     'Lexend Deca',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .primaryColor,
+                                                                    .primary,
                                                                 fontSize: 14.0,
                                                                 fontWeight:
                                                                     FontWeight
@@ -1102,7 +1104,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                             SpinKitFadingCircle(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primaryColor,
+                                                              .primary,
                                                           size: 50.0,
                                                         ),
                                                       ),
@@ -1115,12 +1117,12 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                     textAlign: TextAlign.start,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyText1
+                                                        .bodyMedium
                                                         .override(
                                                           fontFamily: 'Lato',
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primaryColor,
+                                                              .primary,
                                                           fontWeight:
                                                               FontWeight.bold,
                                                         ),
@@ -1164,7 +1166,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                                                                   .checkInDate!),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .title3
+                                                              .headlineSmall
                                                               .override(
                                                                 fontFamily:
                                                                     'Lexend Deca',
@@ -1209,8 +1211,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primaryColor,
-                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                    color: FlutterFlowTheme.of(context).primary,
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Lato',
                           color: Colors.white,
                         ),

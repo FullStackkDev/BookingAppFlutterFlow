@@ -35,7 +35,7 @@ class GetHotelsCall {
     }
   ],
   "resultsStartingIndex": 0,
-  "resultsSize": 200,
+  "resultsSize": 5,
   "sort": "PRICE_LOW_TO_HIGH",
   "filters": {
     "price": {
@@ -61,6 +61,37 @@ class GetHotelsCall {
       cache: false,
     );
   }
+
+  static dynamic jsonLats(dynamic response) => getJsonField(
+        response,
+        r'''$.data.propertySearch.properties[:].mapMarker.latLong.latitude''',
+        true,
+      );
+  static dynamic jsonLongi(dynamic response) => getJsonField(
+        response,
+        r'''$.data.propertySearch.properties[:].mapMarker.latLong.longitude''',
+        true,
+      );
+  static dynamic jsonHotelNames(dynamic response) => getJsonField(
+        response,
+        r'''$.data.propertySearch.properties[:].name''',
+        true,
+      );
+  static dynamic jsonHotelPrice(dynamic response) => getJsonField(
+        response,
+        r'''$.data.propertySearch.properties[:].price.lead.amount''',
+        true,
+      );
+  static dynamic jsonHotelImages(dynamic response) => getJsonField(
+        response,
+        r'''$.data.propertySearch.properties[:].propertyImage.image.url''',
+        true,
+      );
+  static dynamic jsonPropertyReviews(dynamic response) => getJsonField(
+        response,
+        r'''$.data.propertySearch.properties[:].reviews.score''',
+        true,
+      );
 }
 
 class ApiPagingParams {

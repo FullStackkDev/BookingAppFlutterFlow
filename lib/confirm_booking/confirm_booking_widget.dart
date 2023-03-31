@@ -63,7 +63,7 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).primary,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -81,7 +81,7 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
         ),
         title: Text(
           'Hotel Details',
-          style: FlutterFlowTheme.of(context).title1.override(
+          style: FlutterFlowTheme.of(context).displaySmall.override(
                 fontFamily: 'Lato',
                 fontSize: 20.0,
                 fontWeight: FontWeight.w600,
@@ -113,7 +113,7 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 16.0, 0.0, 0.0),
                       child: Text(
                         widget.name!,
-                        style: FlutterFlowTheme.of(context).title2,
+                        style: FlutterFlowTheme.of(context).headlineMedium,
                       ),
                     ),
                     Padding(
@@ -129,7 +129,7 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                                 5.0, 0.0, 0.0, 0.0),
                             child: Text(
                               'Ratings:  ',
-                              style: FlutterFlowTheme.of(context).bodyText1,
+                              style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                           ),
                           Padding(
@@ -138,11 +138,10 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                             child: Text(
                               widget.ratings!,
                               style: FlutterFlowTheme.of(context)
-                                  .subtitle2
+                                  .titleSmall
                                   .override(
                                     fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
+                                    color: FlutterFlowTheme.of(context).primary,
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -156,7 +155,7 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 12.0, 0.0, 4.0),
                       child: Text(
                         'The best of all 3 worlds, Row & Flow offers high intensity rowing and strength intervals followed by athletic based yoga sure to enhance flexible and clear the mind.',
-                        style: FlutterFlowTheme.of(context).bodyText1,
+                        style: FlutterFlowTheme.of(context).bodyMedium,
                       ),
                     ),
                     Divider(
@@ -164,14 +163,14 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                       thickness: 2.0,
                       indent: 20.0,
                       endIndent: 20.0,
-                      color: FlutterFlowTheme.of(context).primaryColor,
+                      color: FlutterFlowTheme.of(context).primary,
                     ),
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 12.0),
                       child: Text(
                         'Past Inspections',
-                        style: FlutterFlowTheme.of(context).bodyText2,
+                        style: FlutterFlowTheme.of(context).bodySmall,
                       ),
                     ),
                     ListView(
@@ -214,12 +213,12 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                                           Text(
                                             'Passed',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyText1
+                                                .bodyMedium
                                                 .override(
                                                   fontFamily: 'Outfit',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryColor,
+                                                      .primary,
                                                   fontSize: 14.0,
                                                   fontWeight: FontWeight.normal,
                                                 ),
@@ -229,7 +228,7 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                                       Text(
                                         'Moments ago',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                       ),
                                     ],
                                   ),
@@ -241,13 +240,13 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                                   ),
                                   Text(
                                     'Inspection was great!',
-                                    style:
-                                        FlutterFlowTheme.of(context).subtitle1,
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium,
                                   ),
                                   Text(
                                     'This was a nice and clean facility.',
                                     style:
-                                        FlutterFlowTheme.of(context).bodyText2,
+                                        FlutterFlowTheme.of(context).bodySmall,
                                   ),
                                 ],
                               ),
@@ -285,8 +284,8 @@ class _ConfirmBookingWidgetState extends State<ConfirmBookingWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   iconPadding:
                       EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).primaryColor,
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                  color: FlutterFlowTheme.of(context).primary,
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                         fontFamily: 'Lato',
                         color: Colors.white,
                       ),

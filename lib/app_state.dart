@@ -3,6 +3,7 @@ import 'backend/backend.dart';
 import 'backend/api_requests/api_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'dart:convert';
 
 class FFAppState extends ChangeNotifier {
   static final FFAppState _instance = FFAppState._internal();
@@ -54,6 +55,12 @@ class FFAppState extends ChangeNotifier {
 
   void removeAtIndexFromRecentSearches(int _index) {
     _recentSearches.removeAt(_index);
+  }
+
+  dynamic _hotelsData;
+  dynamic get hotelsData => _hotelsData;
+  set hotelsData(dynamic _value) {
+    _hotelsData = _value;
   }
 }
 

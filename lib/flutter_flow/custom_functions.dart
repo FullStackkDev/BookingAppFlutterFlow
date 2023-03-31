@@ -17,3 +17,16 @@ LatLng? getLatLong(
 ) {
   return LatLng(latitude!, longitude!);
 }
+
+List<LatLng>? getListLatLong(
+  List<double>? latitude,
+  List<double>? longitude,
+) {
+  List<LatLng> latLngList = [];
+
+  for (int i = 0; i < latitude!.length && i < longitude!.length; i++) {
+    latLngList.add(LatLng(latitude[i], longitude[i]));
+  }
+
+  return latLngList;
+}

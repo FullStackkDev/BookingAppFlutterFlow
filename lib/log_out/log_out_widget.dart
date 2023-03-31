@@ -55,7 +55,7 @@ class _LogOutWidgetState extends State<LogOutWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).primary,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -73,7 +73,7 @@ class _LogOutWidgetState extends State<LogOutWidget> {
         ),
         title: Text(
           'Profile',
-          style: FlutterFlowTheme.of(context).title2.override(
+          style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Lato',
                 color: FlutterFlowTheme.of(context).black600,
                 fontSize: 20.0,
@@ -136,14 +136,13 @@ class _LogOutWidgetState extends State<LogOutWidget> {
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primaryBackground,
-                      textStyle: FlutterFlowTheme.of(context)
-                          .bodyText1
-                          .override(
-                            fontFamily: 'Lexend Deca',
-                            color: FlutterFlowTheme.of(context).primaryColor,
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.normal,
-                          ),
+                      textStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Lexend Deca',
+                                color: FlutterFlowTheme.of(context).primary,
+                                fontSize: 14.0,
+                                fontWeight: FontWeight.normal,
+                              ),
                       elevation: 1.0,
                       borderSide: BorderSide(
                         color: Color(0xFFF7A76C),
@@ -161,8 +160,8 @@ class _LogOutWidgetState extends State<LogOutWidget> {
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Email Address',
-                  labelStyle: FlutterFlowTheme.of(context).bodyText2,
-                  hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
+                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).primaryBackground,
@@ -196,7 +195,7 @@ class _LogOutWidgetState extends State<LogOutWidget> {
                   contentPadding:
                       EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                 ),
-                style: FlutterFlowTheme.of(context).bodyText1,
+                style: FlutterFlowTheme.of(context).bodyMedium,
                 maxLines: null,
                 validator:
                     _model.emailAddressControllerValidator.asValidator(context),
@@ -208,9 +207,9 @@ class _LogOutWidgetState extends State<LogOutWidget> {
                 controller: _model.myBioController,
                 obscureText: false,
                 decoration: InputDecoration(
-                  labelStyle: FlutterFlowTheme.of(context).bodyText2,
+                  labelStyle: FlutterFlowTheme.of(context).bodySmall,
                   hintText: 'Your bio',
-                  hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                  hintStyle: FlutterFlowTheme.of(context).bodySmall,
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: FlutterFlowTheme.of(context).primaryBackground,
@@ -244,7 +243,7 @@ class _LogOutWidgetState extends State<LogOutWidget> {
                   contentPadding:
                       EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                 ),
-                style: FlutterFlowTheme.of(context).bodyText1,
+                style: FlutterFlowTheme.of(context).bodyMedium,
                 textAlign: TextAlign.start,
                 maxLines: 3,
                 validator: _model.myBioControllerValidator.asValidator(context),
@@ -270,7 +269,7 @@ class _LogOutWidgetState extends State<LogOutWidget> {
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).alternate,
-                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Lexend Deca',
                           color: Colors.white,
                           fontSize: 16.0,

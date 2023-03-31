@@ -44,7 +44,7 @@ class _CountriesWidgetState extends State<CountriesWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).primary,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -62,7 +62,7 @@ class _CountriesWidgetState extends State<CountriesWidget> {
         ),
         title: Text(
           'Countries',
-          style: FlutterFlowTheme.of(context).title1.override(
+          style: FlutterFlowTheme.of(context).displaySmall.override(
                 fontFamily: 'Lato',
                 fontSize: 20.0,
                 fontWeight: FontWeight.w600,
@@ -90,7 +90,7 @@ class _CountriesWidgetState extends State<CountriesWidget> {
                           width: 50.0,
                           height: 50.0,
                           child: SpinKitFadingCircle(
-                            color: FlutterFlowTheme.of(context).primaryColor,
+                            color: FlutterFlowTheme.of(context).primary,
                             size: 50.0,
                           ),
                         ),
@@ -171,7 +171,7 @@ class _CountriesWidgetState extends State<CountriesWidget> {
                                               listViewCountriesRecord.name!,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .title3,
+                                                      .headlineSmall,
                                             ),
                                           ],
                                         ),

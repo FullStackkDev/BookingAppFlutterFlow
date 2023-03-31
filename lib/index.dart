@@ -7,3 +7,4 @@ export '/cities/cities_widget.dart' show CitiesWidget;
 export '/confirm_booking/confirm_booking_widget.dart' show ConfirmBookingWidget;
 export '/log_out/log_out_widget.dart' show LogOutWidget;
 export '/hotel_maps/hotel_maps_widget.dart' show HotelMapsWidget;
+export '/test/test_widget.dart' show TestWidget;

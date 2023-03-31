@@ -102,6 +102,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             cityRef: params.getParam(
                 'cityRef', ParamType.DocumentReference, false, ['Cities']),
             destinationId: params.getParam('destinationId', ParamType.String),
+            hotelNames:
+                params.getParam<String>('hotelNames', ParamType.String, true),
+            hotelImages:
+                params.getParam<String>('hotelImages', ParamType.String, true),
+            price: params.getParam<double>('price', ParamType.double, true),
+            ratings: params.getParam<double>('ratings', ParamType.double, true),
           ),
         ),
         FFRoute(
@@ -140,9 +146,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'HotelMaps',
           path: '/hotelMaps',
           builder: (context, params) => HotelMapsWidget(
-            latLong: params.getParam('latLong', ParamType.LatLng),
+            latLong: params.getParam<LatLng>('latLong', ParamType.LatLng, true),
             hotelName: params.getParam('hotelName', ParamType.String),
+            destinationId: params.getParam('destinationId', ParamType.String),
+            countriesRef: params.getParam('countriesRef',
+                ParamType.DocumentReference, false, ['Countries']),
+            citiesRef: params.getParam(
+                'citiesRef', ParamType.DocumentReference, false, ['Cities']),
+            hotelData: params.getParam('hotelData', ParamType.JSON),
           ),
+        ),
+        FFRoute(
+          name: 'test',
+          path: '/test',
+          builder: (context, params) => TestWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
@@ -329,7 +346,7 @@ class FFRoute {
                     width: 50.0,
                     height: 50.0,
                     child: SpinKitFadingCircle(
-                      color: FlutterFlowTheme.of(context).primaryColor,
+                      color: FlutterFlowTheme.of(context).primary,
                       size: 50.0,
                     ),
                   ),

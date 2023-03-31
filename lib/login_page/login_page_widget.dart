@@ -63,7 +63,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                   children: [
                     Text(
                       'Your Travel Partner',
-                      style: FlutterFlowTheme.of(context).subtitle1.override(
+                      style: FlutterFlowTheme.of(context).titleMedium.override(
                             fontFamily: 'Lato',
                             fontSize: 20.0,
                             fontWeight: FontWeight.w600,
@@ -80,10 +80,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                     children: [
                       TabBar(
                         isScrollable: true,
-                        labelColor: FlutterFlowTheme.of(context).primaryColor,
+                        labelColor: FlutterFlowTheme.of(context).primary,
                         labelPadding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
-                        labelStyle: FlutterFlowTheme.of(context).subtitle1,
+                        labelStyle: FlutterFlowTheme.of(context).titleMedium,
                         indicatorColor: Color(0xFFF7A76C),
                         tabs: [
                           Tab(
@@ -112,10 +112,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       decoration: InputDecoration(
                                         labelText: 'Email Address',
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         hintText: 'Enter your email...',
                                         hintStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -128,7 +128,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                                .primary,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -157,7 +157,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 20.0, 24.0, 20.0, 24.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Lato',
                                             color: Color(0xFF0F1113),
@@ -177,10 +177,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       decoration: InputDecoration(
                                         labelText: 'Password',
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         hintText: 'Enter your password...',
                                         hintStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -193,7 +193,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                                .primary,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -238,7 +238,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Lato',
                                             color: Color(0xFF0F1113),
@@ -276,9 +276,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryColor,
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
-                                            .subtitle2
+                                            .titleSmall
                                             .override(
                                               fontFamily: 'Lato',
                                               color: Colors.white,
@@ -312,10 +312,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       decoration: InputDecoration(
                                         labelText: 'Email Address',
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         hintText: 'Enter your email...',
                                         hintStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -328,7 +328,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                                .primary,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -357,7 +357,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                                 20.0, 24.0, 20.0, 24.0),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Lato',
                                             color: Color(0xFF0F1113),
@@ -379,10 +379,10 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                       decoration: InputDecoration(
                                         labelText: 'Password',
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         hintText: 'Enter your password...',
                                         hintStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -395,7 +395,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                                .primary,
                                             width: 1.0,
                                           ),
                                           borderRadius:
@@ -442,7 +442,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                         ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1
+                                          .bodyMedium
                                           .override(
                                             fontFamily: 'Lato',
                                             color: Color(0xFF0F1113),
@@ -482,9 +482,9 @@ class _LoginPageWidgetState extends State<LoginPageWidget> {
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryColor,
+                                            .primary,
                                         textStyle: FlutterFlowTheme.of(context)
-                                            .subtitle2
+                                            .titleSmall
                                             .override(
                                               fontFamily: 'Lato',
                                               color:
