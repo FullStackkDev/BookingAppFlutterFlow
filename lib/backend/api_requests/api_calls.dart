@@ -49,7 +49,7 @@ class GetHotelsCall {
       apiUrl: 'https://hotels4.p.rapidapi.com/properties/v2/list',
       callType: ApiCallType.POST,
       headers: {
-        'X-RapidAPI-Key': 'c5d2a55b8dmsh46b11090f56f370p1ef98ajsn37fc164bd6dd',
+        'X-RapidAPI-Key': '6ff9019ea2msh6959190111b5e4dp157a1ajsn4bd29ce7988c',
         'X-RapidAPI-Host': 'hotels4.p.rapidapi.com',
       },
       params: {},

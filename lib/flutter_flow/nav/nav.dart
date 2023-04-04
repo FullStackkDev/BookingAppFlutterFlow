@@ -146,14 +146,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'HotelMaps',
           path: '/hotelMaps',
           builder: (context, params) => HotelMapsWidget(
-            latLong: params.getParam<LatLng>('latLong', ParamType.LatLng, true),
-            hotelName: params.getParam('hotelName', ParamType.String),
             destinationId: params.getParam('destinationId', ParamType.String),
             countriesRef: params.getParam('countriesRef',
                 ParamType.DocumentReference, false, ['Countries']),
             citiesRef: params.getParam(
                 'citiesRef', ParamType.DocumentReference, false, ['Cities']),
-            hotelData: params.getParam('hotelData', ParamType.JSON),
           ),
         ),
         FFRoute(

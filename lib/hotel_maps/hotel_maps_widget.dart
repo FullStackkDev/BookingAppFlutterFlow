@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -16,20 +17,14 @@ export 'hotel_maps_model.dart';
 class HotelMapsWidget extends StatefulWidget {
   const HotelMapsWidget({
     Key? key,
-    this.latLong,
-    this.hotelName,
     this.destinationId,
     this.countriesRef,
     this.citiesRef,
-    this.hotelData,
   }) : super(key: key);
 
-  final List<LatLng>? latLong;
-  final String? hotelName;
   final String? destinationId;
   final DocumentReference? countriesRef;
   final DocumentReference? citiesRef;
-  final dynamic hotelData;
 
   @override
   _HotelMapsWidgetState createState() => _HotelMapsWidgetState();
@@ -257,15 +252,16 @@ class _HotelMapsWidgetState extends State<HotelMapsWidget> {
                                               hotelMapsGetHotelsResponse
                                                   .jsonBody,
                                             ) as List)
-                                                    .map<String>(
-                                                        (s) => s.toString())
-                                                    .toList()
-                                                    .first,
+                                                        .map<String>(
+                                                            (s) => s.toString())
+                                                        .toList()[
+                                                    random_data.randomInteger(
+                                                        0, 4)],
                                             image:
                                                 GetHotelsCall.jsonHotelImages(
                                               hotelMapsGetHotelsResponse
                                                   .jsonBody,
-                                            ).first,
+                                            )[random_data.randomInteger(0, 4)],
                                           ),
                                         );
                                       },

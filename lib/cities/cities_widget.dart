@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -120,168 +121,197 @@ class _CitiesWidgetState extends State<CitiesWidget> {
                         return Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 8.0),
-                          child: InkWell(
-                            onTap: () async {
-                              context.pushNamed(
-                                'HotelMaps',
-                                queryParams: {
-                                  'destinationId': serializeParam(
-                                    listViewCitiesRecord.destinationId,
-                                    ParamType.String,
-                                  ),
-                                  'countriesRef': serializeParam(
-                                    widget.countryRef,
-                                    ParamType.DocumentReference,
-                                  ),
-                                  'citiesRef': serializeParam(
-                                    listViewCitiesRecord.reference,
-                                    ParamType.DocumentReference,
-                                  ),
-                                }.withoutNulls,
-                              );
-                            },
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 3.0,
-                                    color: Color(0x411D2429),
-                                    offset: Offset(0.0, 1.0),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    8.0, 8.0, 8.0, 8.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 1.0, 1.0, 1.0),
-                                      child: StreamBuilder<CountriesRecord>(
-                                        stream: CountriesRecord.getDocument(
-                                            widget.countryRef!),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: SizedBox(
-                                                width: 50.0,
-                                                height: 50.0,
-                                                child: SpinKitFadingCircle(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  size: 50.0,
-                                                ),
-                                              ),
-                                            );
-                                          }
-                                          final imageCountriesRecord =
-                                              snapshot.data!;
-                                          return ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(6.0),
-                                            child: Image.network(
-                                              imageCountriesRecord.img!,
-                                              width: 60.0,
-                                              height: 60.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          );
-                                        },
-                                      ),
+                          child: FutureBuilder<ApiCallResponse>(
+                            future: GetHotelsCall.call(
+                              destinationId: listViewCitiesRecord.destinationId,
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: SpinKitFadingCircle(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 50.0,
                                     ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 8.0, 4.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              listViewCitiesRecord.name!,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineSmall,
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 4.0, 8.0, 0.0),
-                                              child: StreamBuilder<
-                                                  CountriesRecord>(
-                                                stream:
-                                                    CountriesRecord.getDocument(
-                                                        widget.countryRef!),
-                                                builder: (context, snapshot) {
-                                                  // Customize what your widget looks like when it's loading.
-                                                  if (!snapshot.hasData) {
-                                                    return Center(
-                                                      child: SizedBox(
-                                                        width: 50.0,
-                                                        height: 50.0,
-                                                        child:
-                                                            SpinKitFadingCircle(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
-                                                          size: 50.0,
-                                                        ),
-                                                      ),
-                                                    );
-                                                  }
-                                                  final textCountriesRecord =
-                                                      snapshot.data!;
-                                                  return AutoSizeText(
-                                                    textCountriesRecord.name!
-                                                        .maybeHandleOverflow(
-                                                      maxChars: 70,
-                                                      replacement: '…',
-                                                    ),
-                                                    textAlign: TextAlign.start,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodySmall,
-                                                  );
-                                                },
-                                              ),
-                                            ),
-                                          ],
-                                        ),
+                                  ),
+                                );
+                              }
+                              final menuItemGetHotelsResponse = snapshot.data!;
+                              return InkWell(
+                                onTap: () async {
+                                  context.pushNamed(
+                                    'HotelMaps',
+                                    queryParams: {
+                                      'destinationId': serializeParam(
+                                        listViewCitiesRecord.destinationId,
+                                        ParamType.String,
                                       ),
-                                    ),
-                                    Column(
+                                      'countriesRef': serializeParam(
+                                        widget.countryRef,
+                                        ParamType.DocumentReference,
+                                      ),
+                                      'citiesRef': serializeParam(
+                                        listViewCitiesRecord.reference,
+                                        ParamType.DocumentReference,
+                                      ),
+                                    }.withoutNulls,
+                                  );
+                                },
+                                child: Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 3.0,
+                                        color: Color(0x411D2429),
+                                        offset: Offset(0.0, 1.0),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8.0, 8.0, 8.0, 8.0),
+                                    child: Row(
                                       mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
                                       children: [
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 4.0, 0.0, 0.0),
-                                          child: Icon(
-                                            Icons.chevron_right_rounded,
-                                            color: Color(0xFF57636C),
-                                            size: 24.0,
+                                                  0.0, 1.0, 1.0, 1.0),
+                                          child: StreamBuilder<CountriesRecord>(
+                                            stream: CountriesRecord.getDocument(
+                                                widget.countryRef!),
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child: SizedBox(
+                                                    width: 50.0,
+                                                    height: 50.0,
+                                                    child: SpinKitFadingCircle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      size: 50.0,
+                                                    ),
+                                                  ),
+                                                );
+                                              }
+                                              final imageCountriesRecord =
+                                                  snapshot.data!;
+                                              return ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(6.0),
+                                                child: Image.network(
+                                                  imageCountriesRecord.img!,
+                                                  width: 60.0,
+                                                  height: 60.0,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              );
+                                            },
                                           ),
+                                        ),
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 8.0, 4.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  listViewCitiesRecord.name!,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .headlineSmall,
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 4.0, 8.0, 0.0),
+                                                  child: StreamBuilder<
+                                                      CountriesRecord>(
+                                                    stream: CountriesRecord
+                                                        .getDocument(
+                                                            widget.countryRef!),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 50.0,
+                                                            height: 50.0,
+                                                            child:
+                                                                SpinKitFadingCircle(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              size: 50.0,
+                                                            ),
+                                                          ),
+                                                        );
+                                                      }
+                                                      final textCountriesRecord =
+                                                          snapshot.data!;
+                                                      return AutoSizeText(
+                                                        textCountriesRecord
+                                                            .name!
+                                                            .maybeHandleOverflow(
+                                                          maxChars: 70,
+                                                          replacement: '…',
+                                                        ),
+                                                        textAlign:
+                                                            TextAlign.start,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodySmall,
+                                                      );
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 4.0, 0.0, 0.0),
+                                              child: Icon(
+                                                Icons.chevron_right_rounded,
+                                                color: Color(0xFF57636C),
+                                                size: 24.0,
+                                              ),
+                                            ),
+                                          ],
                                         ),
                                       ],
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ),
+                              );
+                            },
                           ),
                         );
                       },

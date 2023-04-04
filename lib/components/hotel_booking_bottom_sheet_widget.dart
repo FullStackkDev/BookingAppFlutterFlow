@@ -130,13 +130,13 @@ class _HotelBookingBottomSheetWidgetState
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                Navigator.pop(context);
                               },
-                              text: 'Book Now',
+                              text: 'Hide',
                               options: FFButtonOptions(
-                                width: 150.0,
-                                height: 50.0,
+                                width: 120.0,
+                                height: 40.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
