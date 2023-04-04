@@ -144,17 +144,17 @@ class _CitiesWidgetState extends State<CitiesWidget> {
                               return InkWell(
                                 onTap: () async {
                                   context.pushNamed(
-                                    'HotelMaps',
+                                    'hotelsMapView',
                                     queryParams: {
                                       'destinationId': serializeParam(
                                         listViewCitiesRecord.destinationId,
                                         ParamType.String,
                                       ),
-                                      'countriesRef': serializeParam(
+                                      'countryRef': serializeParam(
                                         widget.countryRef,
                                         ParamType.DocumentReference,
                                       ),
-                                      'citiesRef': serializeParam(
+                                      'cityRef': serializeParam(
                                         listViewCitiesRecord.reference,
                                         ParamType.DocumentReference,
                                       ),

@@ -157,6 +157,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'test',
           path: '/test',
           builder: (context, params) => TestWidget(),
+        ),
+        FFRoute(
+          name: 'hotelsMapView',
+          path: '/hotelsMapView',
+          builder: (context, params) => HotelsMapViewWidget(
+            destinationId: params.getParam('destinationId', ParamType.String),
+            countryRef: params.getParam('countryRef',
+                ParamType.DocumentReference, false, ['Countries']),
+            cityRef: params.getParam(
+                'cityRef', ParamType.DocumentReference, false, ['Cities']),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,

@@ -127,8 +127,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Lato',
-                                    color: FlutterFlowTheme.of(context)
-                                        .maximumBlueGreen,
+                                    color: FlutterFlowTheme.of(context).gray600,
                                   ),
                         ),
                       ),
@@ -357,6 +356,20 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
           appBar: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
+            leading: FlutterFlowIconButton(
+              borderColor: Colors.transparent,
+              borderRadius: 30.0,
+              borderWidth: 1.0,
+              buttonSize: 60.0,
+              icon: Icon(
+                Icons.menu,
+                color: FlutterFlowTheme.of(context).black600,
+                size: 30.0,
+              ),
+              onPressed: () async {
+                scaffoldKey.currentState!.openDrawer();
+              },
+            ),
             title: Text(
               'My Trips',
               style: FlutterFlowTheme.of(context).titleMedium.override(
@@ -365,22 +378,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
                     fontWeight: FontWeight.bold,
                   ),
             ),
-            actions: [
-              FlutterFlowIconButton(
-                borderColor: Colors.transparent,
-                borderRadius: 30.0,
-                borderWidth: 1.0,
-                buttonSize: 60.0,
-                icon: Icon(
-                  Icons.menu,
-                  color: FlutterFlowTheme.of(context).primaryText,
-                  size: 30.0,
-                ),
-                onPressed: () async {
-                  scaffoldKey.currentState!.openDrawer();
-                },
-              ),
-            ],
+            actions: [],
             centerTitle: true,
             elevation: 2.0,
           ),
