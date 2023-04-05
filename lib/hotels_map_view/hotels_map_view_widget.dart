@@ -83,7 +83,7 @@ class _HotelsMapViewWidgetState extends State<HotelsMapViewWidget>
         return Scaffold(
           key: scaffoldKey,
           resizeToAvoidBottomInset: false,
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
           appBar: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
@@ -126,9 +126,9 @@ class _HotelsMapViewWidgetState extends State<HotelsMapViewWidget>
                     child: Column(
                       children: [
                         TabBar(
-                          labelColor:
-                              FlutterFlowTheme.of(context).primaryBtnText,
-                          unselectedLabelColor: Color(0xB3FFFFFF),
+                          labelColor: FlutterFlowTheme.of(context).primary,
+                          unselectedLabelColor:
+                              FlutterFlowTheme.of(context).accent1,
                           labelStyle: FlutterFlowTheme.of(context).titleMedium,
                           indicatorColor: FlutterFlowTheme.of(context).primary,
                           indicatorWeight: 2.0,
@@ -308,9 +308,10 @@ class _HotelsMapViewWidgetState extends State<HotelsMapViewWidget>
                                                     child: Container(
                                                       width: 100.0,
                                                       decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .lineColor,
                                                         boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 5.0,
@@ -417,7 +418,7 @@ class _HotelsMapViewWidgetState extends State<HotelsMapViewWidget>
                                                                       .max,
                                                               mainAxisAlignment:
                                                                   MainAxisAlignment
-                                                                      .spaceBetween,
+                                                                      .start,
                                                               children: [
                                                                 Text(
                                                                   'Ratings: ',
@@ -439,11 +440,18 @@ class _HotelsMapViewWidgetState extends State<HotelsMapViewWidget>
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    Text(
-                                                                      '\$ ',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
+                                                                    Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Text(
+                                                                        '\$ ',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium,
+                                                                      ),
                                                                     ),
                                                                     Padding(
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
