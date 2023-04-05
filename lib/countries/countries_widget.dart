@@ -26,6 +26,8 @@ class _CountriesWidgetState extends State<CountriesWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CountriesModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

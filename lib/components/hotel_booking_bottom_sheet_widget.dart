@@ -37,6 +37,8 @@ class _HotelBookingBottomSheetWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => HotelBookingBottomSheetModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

@@ -40,6 +40,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget> {
     });
 
     _model.textController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

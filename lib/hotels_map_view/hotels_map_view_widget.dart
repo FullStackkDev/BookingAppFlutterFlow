@@ -42,6 +42,8 @@ class _HotelsMapViewWidgetState extends State<HotelsMapViewWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => HotelsMapViewModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

@@ -38,6 +38,7 @@ class _LogOutWidgetState extends State<LogOutWidget> {
     _model.emailAddressController ??= TextEditingController(text: widget.email);
     _model.myBioController ??=
         TextEditingController(text: 'I love travelling.');
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

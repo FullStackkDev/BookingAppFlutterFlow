@@ -34,6 +34,8 @@ class _CitiesWidgetState extends State<CitiesWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CitiesModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
