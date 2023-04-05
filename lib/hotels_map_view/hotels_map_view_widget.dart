@@ -1,4 +1,5 @@
 import '/backend/api_requests/api_calls.dart';
+import '/components/hotel_booking_bottom_sheet_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -184,8 +185,8 @@ class _HotelsMapViewWidgetState extends State<HotelsMapViewWidget>
                                                                       .jsonBody,
                                                                 )?.toList())!
                                                             .first,
-                                                markers:
-                                                    (functions.getListLatLong(
+                                                markers: (functions
+                                                            .getListLatLong(
                                                                 GetHotelsCall
                                                                     .jsonLats(
                                                                   hotelsMapViewGetHotelsResponse
@@ -196,15 +197,48 @@ class _HotelsMapViewWidgetState extends State<HotelsMapViewWidget>
                                                                   hotelsMapViewGetHotelsResponse
                                                                       .jsonBody,
                                                                 )?.toList()) ??
-                                                            [])
-                                                        .map(
-                                                          (marker) =>
-                                                              FlutterFlowMarker(
-                                                            marker.serialize(),
-                                                            marker,
-                                                          ),
-                                                        )
-                                                        .toList(),
+                                                        [])
+                                                    .map(
+                                                      (marker) =>
+                                                          FlutterFlowMarker(
+                                                        marker.serialize(),
+                                                        marker,
+                                                        () async {
+                                                          await showModalBottomSheet(
+                                                            isScrollControlled:
+                                                                true,
+                                                            backgroundColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            enableDrag: false,
+                                                            context: context,
+                                                            builder: (context) {
+                                                              return Padding(
+                                                                padding: MediaQuery.of(
+                                                                        context)
+                                                                    .viewInsets,
+                                                                child:
+                                                                    HotelBookingBottomSheetWidget(
+                                                                  hotelName:
+                                                                      getJsonField(
+                                                                    hotelsMapViewGetHotelsResponse
+                                                                        .jsonBody,
+                                                                    r'''$.name''',
+                                                                  ).toString(),
+                                                                  image: GetHotelsCall
+                                                                      .jsonHotelImages(
+                                                                    hotelsMapViewGetHotelsResponse
+                                                                        .jsonBody,
+                                                                  ).first,
+                                                                ),
+                                                              );
+                                                            },
+                                                          ).then((value) =>
+                                                              setState(() {}));
+                                                        },
+                                                      ),
+                                                    )
+                                                    .toList(),
                                                 markerColor:
                                                     GoogleMarkerColor.violet,
                                                 mapType: MapType.normal,
